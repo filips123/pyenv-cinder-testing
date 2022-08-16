@@ -31,7 +31,7 @@ jobs:
     steps:
       - if: startsWith(matrix.os, 'ubuntu') || startsWith(matrix.os, 'debian')
         run: |
-          apt-get update
+          apt-get update -y
           apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
           libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
           xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
@@ -65,10 +65,15 @@ jobs:
           repository: 'filips123/pyenv'
           ref: 'add-cinder-3.8'
 
-      - run: |
+      - name: Versions
+        run: |
+          echo === LDD ===
           ldd --version || echo ldd not found!
+          echo == GCC ===
           gcc --version || echo gcc not found!
+          echo === G++ ===
           g++ --version || echo g++ not found!
+          echo == CLANG ===
           clang --version || echo clang not found!
 
       - run: |
