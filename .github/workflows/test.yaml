@@ -69,7 +69,7 @@ jobs:
           ldd --version || echo ldd not found!
           gcc --version || echo gcc not found!
           g++ --version || echo g++ not found!
-          clang --version  | echo clang not found!
+          clang --version  || echo clang not found!
 
       - run: |
           export PYENV_ROOT="$GITHUB_WORKSPACE"
