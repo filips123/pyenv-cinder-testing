@@ -26,24 +26,24 @@ jobs:
     steps:
       - if: startsWith(matrix.os, 'ubuntu') || startsWith(matrix.os, 'debian')
         run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
+          apt-get update
+          apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
           libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
           xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 
       - if: startsWith(matrix.os, 'fedora') || startsWith(matrix.os, 'centos')
         run: |
-          dnf install make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite \
+          dnf install -y make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite \
           sqlite-devel openssl-devel tk-devel libffi-devel xz-devel
 
       - if: startsWith(matrix.os, 'opensuse')
         run: |
-          zypper install gcc automake bzip2 libbz2-devel xz xz-devel openssl-devel ncurses-devel \
+          zypper install -y gcc automake bzip2 libbz2-devel xz xz-devel openssl-devel ncurses-devel \
           readline-devel zlib-devel tk-devel libffi-devel sqlite3-devel make
 
       - if: startsWith(matrix.os, 'archlinux')
         run: |
-          pacman -S --needed base-devel openssl zlib xz tk
+          pacman -Sy --needed base-devel openssl zlib xz tk
 
       - if: startsWith(matrix.os, 'alpine')
         run: |
