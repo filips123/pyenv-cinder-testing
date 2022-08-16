@@ -35,11 +35,13 @@ jobs:
           apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
           libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
           xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+        env:
+          DEBIAN_FRONTEND: noninteractive
 
       - if: startsWith(matrix.os, 'fedora')
         run: |
           dnf install -y make gcc g++ zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git
+          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git findutils
 
       - if: startsWith(matrix.os, 'centos')
         run: |
