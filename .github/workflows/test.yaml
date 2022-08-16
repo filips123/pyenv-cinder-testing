@@ -48,8 +48,8 @@ jobs:
 
       - if: startsWith(matrix.os, 'opensuse')
         run: |
-          zypper install -y gcc g++ automake bzip2 libbz2-devel xz xz-devel openssl-devel ncurses-devel \
-          readline-devel zlib-devel tk-devel libffi-devel sqlite3-devel make git tar sh
+          zypper install -y gcc gcc-c++ automake bzip2 libbz2-devel xz xz-devel openssl-devel ncurses-devel \
+          readline-devel zlib-devel tk-devel libffi-devel sqlite3-devel make git tar bash
 
       - if: startsWith(matrix.os, 'archlinux')
         run: |
@@ -69,7 +69,7 @@ jobs:
           ldd --version || echo ldd not found!
           gcc --version || echo gcc not found!
           g++ --version || echo g++ not found!
-          clang --version  || echo clang not found!
+          clang --version || echo clang not found!
 
       - run: |
           export PYENV_ROOT="$GITHUB_WORKSPACE"
