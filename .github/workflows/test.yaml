@@ -77,7 +77,7 @@ jobs:
           echo "$PYENV_ROOT/shims:$PYENV_ROOT/bin" >> $GITHUB_PATH
 
       - run: |
-          CC=gcc-10 pyenv install cinder-3.8-dev
+          CC=gcc-10 pyenv install -v cinder-3.8-dev
           pyenv global cinder-3.8-dev
 
       - run: python --version
