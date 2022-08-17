@@ -23,8 +23,6 @@ jobs:
           - os: 'fedora:36'
           - os: 'fedora:37'
           - os: 'centos:7'
-          - os: 'opensuse/leap'
-          - os: 'opensuse/tumbleweed'
           - os: 'archlinux'
           - os: 'alpine'
 
@@ -84,7 +82,7 @@ jobs:
           echo "$PYENV_ROOT/shims:$PYENV_ROOT/bin" >> $GITHUB_PATH
 
       - run: |
-          pyenv install cinder-3.8-dev
+          CC=gcc-10 pyenv install cinder-3.8-dev
           pyenv global cinder-3.8-dev
 
       - run: python --version
