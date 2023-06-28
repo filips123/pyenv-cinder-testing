@@ -85,8 +85,8 @@ jobs:
 
       - run: |
           command -v "gcc-10" && export CC="gcc-10" && echo Setting GCC 10
-          pyenv install -v cinder-3.10-dev
-          pyenv global cinder-3.10-dev
+          pyenv install -v cinder-3.8-dev
+          pyenv global cinder-3.8-dev
 
       - run: python --version
       - run: python -m pip --version
