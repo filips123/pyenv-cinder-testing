@@ -41,13 +41,13 @@ jobs:
       - if: startsWith(matrix.os, 'fedora')
         run: |
           dnf install -y make gcc g++ zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git findutils
+          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git findutils patch
           dnf install -y compat-gcc-32 || echo Failed to install GCC 10
 
       - if: startsWith(matrix.os, 'centos')
         run: |
           yum install -y gcc g++ make zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git
+          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git patch
 
       - if: startsWith(matrix.os, 'archlinux')
         run: |
