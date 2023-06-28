@@ -17,7 +17,7 @@ jobs:
           # - os: 'ubuntu:21.04' # Too old compiler
           - os: 'ubuntu:22.04'
           - os: 'ubuntu:23.04'
-          - os: 'debian:10'
+          # - os: 'debian:10' # Too old compiler
           - os: 'debian:11'
           - os: 'debian:12'
           - os: 'fedora:32'
