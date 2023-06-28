@@ -33,14 +33,16 @@ jobs:
           apt-get update -y
           apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
           libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-          xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git gcc-10
+          xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git gcc
+          apt-get install -y gcc-10 || echo Failed to install GCC 10
         env:
           DEBIAN_FRONTEND: noninteractive
 
       - if: startsWith(matrix.os, 'fedora')
         run: |
           dnf install -y make gcc g++ zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git findutils compat-gcc-32
+          sqlite-devel openssl-devel tk-devel libffi-devel xz-devel git findutils
+          dnf install -y compat-gcc-32 || echo Failed to install GCC 10
 
       - if: startsWith(matrix.os, 'centos')
         run: |
