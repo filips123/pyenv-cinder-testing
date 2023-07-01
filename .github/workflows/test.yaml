@@ -13,7 +13,7 @@ jobs:
           # - os: 'ubuntu:17.04' # Too old compiler
           # - os: 'ubuntu:18.04' # Too old compiler
           # - os: 'ubuntu:19.04' # Too old compiler
-          # - os: 'ubuntu:20.04' # Too old compiler
+          - os: 'ubuntu:20.04' # Too old compiler
           # - os: 'ubuntu:21.04' # Too old compiler
           - os: 'ubuntu:22.04'
           - os: 'ubuntu:23.04'
