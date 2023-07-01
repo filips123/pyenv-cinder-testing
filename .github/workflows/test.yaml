@@ -77,6 +77,8 @@ jobs:
           g++ --version || echo g++ not found!
           echo == CLANG ===
           clang --version || echo clang not found!
+          echo == GCC 10 ===
+          gcc-10 --version || echo gcc-10 not found!
 
       - run: |
           export PYENV_ROOT="$GITHUB_WORKSPACE"
@@ -84,7 +86,7 @@ jobs:
           echo "$PYENV_ROOT/shims:$PYENV_ROOT/bin" >> $GITHUB_PATH
 
       - run: |
-          command -v "gcc-10" && export CC="gcc-10" && echo Setting GCC 10
+          # command -v "gcc-10" && export CC="gcc-10" && echo Setting GCC 10
           pyenv install -v cinder-3.8-dev
           pyenv global cinder-3.8-dev
 
